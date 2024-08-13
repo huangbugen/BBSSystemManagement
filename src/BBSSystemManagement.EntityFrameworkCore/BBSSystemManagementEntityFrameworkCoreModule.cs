@@ -12,11 +12,12 @@ public class BBSSystemManagementEntityFrameworkCoreModule : AceModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAceDbContext<BBSSystemManagementDbContext>(opts=>
+        context.Services.AddAceDbContext<BBSSystemManagementDbContext>(opts =>
         {
             opts.AddDefaultRepositories(true);
         });
-        Configure<AceDbContextOptions>(opts=>{
+        Configure<AceDbContextOptions>(opts =>
+        {
             opts.UseSqlServer();
         });
     }
